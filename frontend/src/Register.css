@@ -1,0 +1,303 @@
+.register-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.bg-blob {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: 0;
+  pointer-events: none;
+  animation: float 14s ease-in-out infinite alternate;
+}
+
+.bg-blob-1 {
+  top: -120px;
+  left: -120px;
+  background: radial-gradient(circle, rgba(255, 59, 59, 0.45), transparent 60%);
+}
+
+.bg-blob-2 {
+  bottom: -140px;
+  right: -140px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 55%);
+  animation-delay: 2s;
+}
+
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.2;
+  mask-image: radial-gradient(circle at center, black 50%, transparent 80%);
+  pointer-events: none;
+}
+
+.register-card {
+  position: relative;
+  z-index: 1;
+  width: min(960px, 100%);
+  padding: 2.5rem;
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(5, 5, 7, 0.8));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 12px 30px rgba(255, 59, 59, 0.12);
+  backdrop-filter: blur(18px) saturate(140%);
+  overflow: hidden;
+}
+
+.card-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 59, 59, 0.12), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.08), transparent 30%);
+  mix-blend-mode: screen;
+}
+
+.card-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.5rem;
+}
+
+.card-header h1 {
+  margin: 0.25rem 0;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.eyebrow {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffb3b3;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subtext {
+  color: #dcdcdc;
+  max-width: 640px;
+  margin: 0.25rem 0 0;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 0.85rem 1rem 0.85rem 1rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  overflow: hidden;
+}
+
+.field-wrapper:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 59, 59, 0.4);
+}
+
+.field-wrapper:focus-within {
+  border-color: rgba(255, 59, 59, 0.8);
+  box-shadow: 0 0 0 6px rgba(255, 59, 59, 0.12), 0 18px 45px rgba(0, 0, 0, 0.45);
+}
+
+.field-icon {
+  color: #ff9f9f;
+  margin-right: 0.75rem;
+  display: grid;
+  place-items: center;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.field-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1.05rem;
+  padding: 0.35rem 0;
+}
+
+.field-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.field-label {
+  position: absolute;
+  margin-left: 2.4rem;
+  margin-top: 0.55rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.field-input:focus ~ .field-focus,
+.field-input:not(:placeholder-shown) ~ .field-focus {
+  opacity: 1;
+}
+
+.field-input:focus ~ .field-focus::after,
+.field-input:not(:placeholder-shown) ~ .field-focus::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.field-input:focus ~ .field-focus::before,
+.field-input:not(:placeholder-shown) ~ .field-focus::before {
+  opacity: 1;
+}
+
+.field-input:focus + .field-focus + .field-label,
+.field-input:not(:placeholder-shown) + .field-focus + .field-label,
+.field-label.floated {
+  transform: translateY(-1.4rem) scale(0.88);
+  color: #ff7373;
+}
+
+.field-focus {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 14px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.field-focus::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 59, 59, 0.45);
+  filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.field-focus::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(120deg, rgba(255, 59, 59, 0.35), rgba(255, 255, 255, 0.1));
+  opacity: 0;
+  transform: scaleX(0.96);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn {
+  position: relative;
+  border: none;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff3b3b, #ff6060);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15), transparent 25%),
+    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.1), transparent 20%);
+  mix-blend-mode: screen;
+}
+
+.submit-btn:hover {
+  filter: brightness(1.02);
+}
+
+.submit-btn:active {
+  transform: scale(0.985);
+}
+
+.submit-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.9s linear infinite;
+}
+
+.error {
+  color: #ff9f9f;
+  margin: 0;
+  font-weight: 600;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  to {
+    transform: translateY(20px) translateX(10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .register-card {
+    padding: 1.8rem;
+  }
+
+  .card-header h1 {
+    font-size: 2rem;
+  }
+
+  .bg-blob {
+    width: 360px;
+    height: 360px;
+  }
+}
+
