@@ -1,8 +1,16 @@
 # Kaar Assignment - MERN Stack Registration App
 
 A complete MERN stack registration application built without Express.js, featuring password hashing with bcrypt, an animated React UI, and MongoDB integration.
+<img width="1913" height="842" alt="Kaar assignment" src="https://github.com/user-attachments/assets/2f6f2458-efcd-4761-b086-f3e6a66c06aa" />
+<img width="1910" height="833" alt="Kaar assignment 1" src="https://github.com/user-attachments/assets/cf921c8a-e801-43f3-a17b-414507c0ef76" />
+<img width="1858" height="811" alt="Kaar assignment 2" src="https://github.com/user-attachments/assets/ce82f7bc-188a-4047-bf8d-495ae4cbd2a0" />
+<img width="1892" height="845" alt="Kaar assignment 3" src="https://github.com/user-attachments/assets/331f6c7c-4348-4424-8da3-867fc1c9be49" />
 
-## 🚀 Features
+
+
+
+
+## Features
 
 - **Pure Node.js Backend**: Built using only the `http` module (no Express)
 - **Manual JSON Parsing**: Custom request handling with `req.on('data')` and `req.on('end')`
@@ -96,7 +104,7 @@ MONGO_URI=mongodb://localhost:27017/mern_noexpress
 PORT=5000
 ```
 
-## 🚀 Running the Application
+##  Running the Application
 
 ### Start Backend Server
 
@@ -116,7 +124,7 @@ npm run dev
 
 The frontend will run on `http://localhost:5173` (or another port if 5173 is busy)
 
-## 📝 API Endpoints
+##  API Endpoints
 
 ### POST `/register`
 
@@ -141,24 +149,14 @@ Register a new user.
 }
 ```
 
-## 🎨 UI Features
-
-- **Animated Registration Form**: Smooth transitions and hover effects
-- **Floating Labels**: Labels animate when input is focused/filled
-- **Red & White Theme**: Modern color scheme
-- **Glassmorphism Design**: Frosted glass effect on card
-- **Responsive Layout**: Works on all screen sizes
-- **Loading States**: Spinner animation during form submission
-- **Error Handling**: User-friendly error messages
-
-## 🔐 Security Notes
+## Security Notes
 
 - Passwords are hashed using bcrypt before storage
 - MongoDB connection strings are excluded via `.gitignore`
 - CORS is manually configured for security
 - **Important**: The "Decrypt" feature is for demonstration only. In production, passwords should never be stored in plaintext or passed through navigation state.
 
-## 📊 Database Schema
+##  Database Schema
 
 ```javascript
 {
@@ -169,7 +167,7 @@ Register a new user.
 }
 ```
 
-## 🧪 Testing the Application
+##  Testing the Application
 
 1. Start MongoDB (local or Atlas)
 2. Start the backend server
@@ -179,7 +177,7 @@ Register a new user.
 6. Submit to see the welcome page with hashed password
 7. Click "Decrypt" to view the original password (demo only)
 
-## 📦 Dependencies
+##  Dependencies
 
 ### Backend
 - `bcrypt`: ^6.0.0
@@ -191,14 +189,6 @@ Register a new user.
 - `react-router-dom`: ^7.10.1
 - `framer-motion`: Latest
 - `react-icons`: Latest
-
-## 🤝 Contributing
-
-This is an assignment project. Feel free to fork and modify as needed.
-
-## 📄 License
-
-This project is created for assignment purposes.
 
 ## 👨‍💻 Developer
 
